@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% for msg in messages %}
+    {{msg}}
+    {% endfor %}
+    <center>
+        <div style="border: 7px solid black;width: 500px;">
+            <form action="" method="post" style="color: white;">
+        
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        {{data.as_table}}
+                    </tr>
+                </table>
+                <input type="submit" value="login">
+            </form>
+            <p
+            style="color:white;">Dont have account !</p>
+            <a href="{% url 'app1:register' %}"><input type="submit" value="signin"></a>
+            </div>
+    </center>
+{% endblock %}
